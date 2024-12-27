@@ -71,9 +71,23 @@ mongodb+srv://<username>:<password>@cluster0.mongodb.net/<database-name>?retryWr
 
   If your password contains special symbols, they must be replaced with their URL-encoded equivalents. Below is a reference table for common symbols:
 
-| Symbol                      | URL Encoded Value                 |
-| --------------------------- | --------------------------------- |  
-| @                           | %40                               |
+  | Symbol                      | URL Encoded Value                 |
+  | --------------------------- | --------------------------------- |  
+  | @                           | %40                               |
+  | #                           | %23                               |
+  | $                           | %24                               |
+  | /                           | %2f                               |
+  | :                           | %3a                               |
+  | ?                           | %3f                               |
+  | .                           | %2e                               |
+  | +                           | %2b                               |
+
+  Example
+
+  If your MongoDB Atlas *username* is `admin` and your *password* is `P@ssw0rd!`, your URI would look like this:
+
+  `DATABASE_URI=mongodb+srv://admin:P%40ssw0rd%21@cluster0.mongodb.net/myDatabase?retryWrites=true&w=majorityappName=<app-name>`
+
 
 ## Options
 
